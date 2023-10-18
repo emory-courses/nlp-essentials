@@ -27,18 +27,18 @@ def top_k_words(word_counts: Counter[str, int], k: int, top=True):
 if __name__ == '__main__':
     filename = 'dat/emory-wiki.txt'
 
-    # word tokens and types
+    # Word Counting
     words = open(filename).read().split()
     word_counts = Counter(words)
     print('# of word tokens: {:3d}'.format(len(words)))
     print('# of word types : {:3d}'.format(len(word_counts)))
 
-    # top-k
     topk = top_k_words(word_counts, 10)
     for word, count in topk: print(word, count)
     topk = top_k_words(word_counts, 10, False)
     for word, count in topk: print(word, count)
-    print('===')
+
+    # Tokenization
     for key in sorted(word_counts.keys()): print(key)
 
 
