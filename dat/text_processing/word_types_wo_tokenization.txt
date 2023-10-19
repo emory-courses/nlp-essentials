@@ -1,5 +1,6 @@
 "R1:
 (R&D)
+-
 11
 149,000
 15th-largest
@@ -177,4 +178,3 @@ well
 winners,
 with
 worldwide
-–
