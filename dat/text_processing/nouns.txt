@@ -84,6 +84,7 @@ u.s.
 unit
 university
 vaccine
+vertebra
 vice
 winner
 winship

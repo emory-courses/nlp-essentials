@@ -16,7 +16,9 @@
 
 __author__ = 'Jinho D. Choi'
 
+import json
 from collections import Counter
+from types import SimpleNamespace
 
 
 def top_k_words(word_counts: Counter[str, int], k: int, top=True):
@@ -57,25 +59,37 @@ def postprocess(tokens: list[str]) -> list[str]:
     return new_tokens
 
 
-def noun_lemma(word: str, singular_nouns: set[str], irregular_nouns: dict[str, str], plural_rules: dict[str, str]):
-    # decapitalize
-    word = word.lower()
-
-    # irregular nouns
-    lemma = irregular_nouns.get(word, None)
-    if lemma is not None: return lemma
-
-    # singularize
-    for p, s in plural_rules.items():
-        lemma = word[:-len(p)] + s
-        if lemma in singular_nouns: return lemma
-
-    return word
-
-
 def tokenize(corpus: str, delimiters: set[str]) -> list[str]:
     tmp = open(corpus).read().split()
     return [token for t in tmp for token in postprocess(delimit(t, delimiters))]
+
+
+def get_lemma_lexica() -> SimpleNamespace:
+    return SimpleNamespace(
+        nouns={noun.strip() for noun in open('dat/text_processing/nouns.txt')},
+        verbs={noun.strip() for noun in open('dat/text_processing/verbs.txt')},
+        nouns_irregular=json.load(open('dat/text_processing/nouns_irregular.json')),
+        verbs_irregular=json.load(open('dat/text_processing/verbs_irregular.json')),
+        nouns_rules=json.load(open('dat/text_processing/nouns_rules.json')),
+        verbs_rules=json.load(open('dat/text_processing/verbs_rules.json')),
+    )
+
+
+def lemmatize(word: str, lexica: SimpleNamespace) -> str:
+    def aux(word: str, vocabs: dict[str, str], irregular: dict[str, str], rules: list[tuple[str, str]]):
+        lemma = irregular.get(word, None)
+        if lemma is not None: return lemma
+
+        for p, s in rules:
+            lemma = word[:-len(p)] + s
+            if lemma in vocabs: return lemma
+
+        return None
+
+    word = word.lower()
+    lemma = aux(word, lexica.verbs, lexica.verbs_irregular, lexica.verbs_rules)
+    if lemma is None: lemma = aux(word, lexica.nouns, lexica.nouns_irregular, lexica.nouns_rules)
+    return lemma if lemma else word
 
 
 if __name__ == '__main__':
@@ -111,11 +125,13 @@ if __name__ == '__main__':
     # for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
 
     # Lemmatization
-    singular_nouns = {noun.strip() for noun in open('dat/text_processing/nouns.txt')}
-    irregular_nouns = {'children': 'child', 'mice': 'mouse', 'crises': 'crisis'}
-    plural_rules = {'ies': 'y', 'es': '', 's': '', 'men': 'man', 'i': 'us'}
+    lemma_lexica = get_lemma_lexica()
 
-    tests = ['studies', 'crosses', 'areas', 'gentlemen', 'alumni', 'children', 'crises']
-    for test in tests:
-        print('{} -> {}'.format(test, noun_lemma(test, singular_nouns, irregular_nouns, plural_rules)))
+    test_nouns = ['studies', 'crosses', 'areas', 'gentlemen', 'vertebrae', 'alumni', 'children', 'crises']
+    test_verbs = ['applies', 'cried', 'pushes', 'entered', 'takes', 'heard', 'lying', 'studying', 'taking', 'drawn', 'clung', 'was', 'bought']
+    print('===== Test Nouns =====')
+    for word in test_nouns: print('{} -> {}'.format(word, lemmatize(word, lemma_lexica)))
+    print('===== Test Verb =====')
+    for word in test_verbs: print('{} -> {}'.format(word, lemmatize(word, lemma_lexica)))
 
+# is -> be was
