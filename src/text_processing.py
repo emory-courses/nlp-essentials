@@ -26,8 +26,8 @@ def top_k_words(word_counts: Counter[str, int], k: int, top=True):
 def delimit(token: str, delimiters: set[str]) -> list[str]:
     i = next((i for i, c in enumerate(token) if c in delimiters), -1)
     if i < 0: return [token]
-
     tokens = []
+
     if i > 0: tokens.append(token[:i])
     tokens.append(token[i])
     if i + 1 < len(token): tokens.extend(delimit(token[i + 1:], delimiters))
@@ -57,17 +57,33 @@ def postprocess(tokens: list[str]) -> list[str]:
     return new_tokens
 
 
-def tokenize(filename: str, delimiters: set[str]) -> list[str]:
-    tmp = open(filename).read().split()
+def noun_lemma(word: str, singular_nouns: set[str], irregular_nouns: dict[str, str], plural_rules: dict[str, str]):
+    # decapitalize
+    word = word.lower()
+
+    # irregular nouns
+    lemma = irregular_nouns.get(word, None)
+    if lemma is not None: return lemma
+
+    # singularize
+    for p, s in plural_rules.items():
+        lemma = word[:-len(p)] + s
+        if lemma in singular_nouns: return lemma
+
+    return word
+
+
+def tokenize(corpus: str, delimiters: set[str]) -> list[str]:
+    tmp = open(corpus).read().split()
     return [token for t in tmp for token in postprocess(delimit(t, delimiters))]
 
 
 if __name__ == '__main__':
-    filename = 'dat/text_processing/emory-wiki.txt'
+    corpus = 'dat/text_processing/emory-wiki.txt'
     delimiters = {'"', "'", '(', ')', '[', ']', ':', '-', ',', '.'}
 
     # # Word Counting
-    # words = open(filename).read().split()
+    # words = open(corpus).read().split()
     # word_counts = Counter(words)
     # print('# of word tokens: {}'.format(len(words)))
     # print('# of word types: {}'.format(len(word_counts)))
@@ -79,17 +95,27 @@ if __name__ == '__main__':
     # for word, count in topk: print(word, count)
     #
     # Tokenization
-    # fout = open('dat/text_processing/word_types_wo_tokenization.txt', 'w')
+    # fout = open('dat/text_processing/word_types.txt', 'w')
     # for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
     #
     # tests = ['"R1:', '(R&D)', '15th-largest', 'Atlanta,', "Department's", 'activity"[26]', 'centers.[21][22]', '149,000', 'U.S.']
     # for test in tests:
     #     print('{} -> {}'.format(test, postprocess(delimit(test, delimiters))))
+    #
+    # words = tokenize(corpus, delimiters)
+    # word_counts = Counter(words)
+    # print('# of word tokens: {}'.format(len(words)))
+    # print('# of word types: {}'.format(len(word_counts)))
+    #
+    # fout = open('dat/text_processing/word_types-token.txt', 'w')
+    # for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
 
-    words = tokenize(filename, delimiters)
-    word_counts = Counter(words)
-    print('# of word tokens: {}'.format(len(words)))
-    print('# of word types: {}'.format(len(word_counts)))
+    # Lemmatization
+    singular_nouns = {noun.strip() for noun in open('dat/text_processing/nouns.txt')}
+    irregular_nouns = {'children': 'child', 'mice': 'mouse', 'crises': 'crisis'}
+    plural_rules = {'ies': 'y', 'es': '', 's': '', 'men': 'man', 'i': 'us'}
 
-    fout = open('dat/text_processing/word_types_with_tokenization.txt', 'w')
-    for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
+    tests = ['studies', 'crosses', 'areas', 'gentlemen', 'alumni', 'children', 'crises']
+    for test in tests:
+        print('{} -> {}'.format(test, noun_lemma(test, singular_nouns, irregular_nouns, plural_rules)))
+
