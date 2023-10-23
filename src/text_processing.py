@@ -95,43 +95,46 @@ def lemmatize(word: str, lexica: SimpleNamespace) -> str:
 if __name__ == '__main__':
     corpus = 'dat/text_processing/emory-wiki.txt'
     delimiters = {'"', "'", '(', ')', '[', ']', ':', '-', ',', '.'}
-
-    # # Word Counting
-    # words = open(corpus).read().split()
-    # word_counts = Counter(words)
-    # print('# of word tokens: {}'.format(len(words)))
-    # print('# of word types: {}'.format(len(word_counts)))
-    #
-    # topk = top_k_words(word_counts, 10)
-    # for word, count in topk: print(word, count)
-    #
-    # topk = top_k_words(word_counts, 10, False)
-    # for word, count in topk: print(word, count)
-    #
-    # Tokenization
-    # fout = open('dat/text_processing/word_types.txt', 'w')
-    # for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
-    #
-    # tests = ['"R1:', '(R&D)', '15th-largest', 'Atlanta,', "Department's", 'activity"[26]', 'centers.[21][22]', '149,000', 'U.S.']
-    # for test in tests:
-    #     print('{} -> {}'.format(test, postprocess(delimit(test, delimiters))))
-    #
-    # words = tokenize(corpus, delimiters)
-    # word_counts = Counter(words)
-    # print('# of word tokens: {}'.format(len(words)))
-    # print('# of word types: {}'.format(len(word_counts)))
-    #
-    # fout = open('dat/text_processing/word_types-token.txt', 'w')
-    # for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
-
-    # Lemmatization
     lemma_lexica = get_lemma_lexica()
 
+    # Word Counting
+    words = open(corpus).read().split()
+    word_counts = Counter(words)
+    print('# of word tokens: {}'.format(len(words)))
+    print('# of word types: {}'.format(len(word_counts)))
+
+    topk = top_k_words(word_counts, 10)
+    for word, count in topk: print(word, count)
+    topk = top_k_words(word_counts, 10, False)
+    for word, count in topk: print(word, count)
+
+    # Tokenization
+    fout = open('dat/text_processing/word_types.txt', 'w')
+    for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
+
+    tests = ['"R1:', '(R&D)', '15th-largest', 'Atlanta,', "Department's", 'activity"[26]', 'centers.[21][22]', '149,000', 'U.S.']
+    for test in tests:
+        print('{} -> {}'.format(test, postprocess(delimit(test, delimiters))))
+
+    words = tokenize(corpus, delimiters)
+    word_counts = Counter(words)
+    print('# of word tokens: {}'.format(len(words)))
+    print('# of word types: {}'.format(len(word_counts)))
+
+    fout = open('dat/text_processing/word_types-token.txt', 'w')
+    for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
+
+    # Lemmatization
     test_nouns = ['studies', 'crosses', 'areas', 'gentlemen', 'vertebrae', 'alumni', 'children', 'crises']
-    test_verbs = ['applies', 'cried', 'pushes', 'entered', 'takes', 'heard', 'lying', 'studying', 'taking', 'drawn', 'clung', 'was', 'bought']
-    print('===== Test Nouns =====')
     for word in test_nouns: print('{} -> {}'.format(word, lemmatize(word, lemma_lexica)))
-    print('===== Test Verb =====')
+    test_verbs = ['applies', 'cried', 'pushes', 'entered', 'takes', 'heard', 'lying', 'studying', 'taking', 'drawn', 'clung', 'was', 'bought']
     for word in test_verbs: print('{} -> {}'.format(word, lemmatize(word, lemma_lexica)))
 
-# is -> be was
+    words = [lemmatize(word, lemma_lexica) for word in tokenize(corpus, delimiters)]
+    word_counts = Counter(words)
+
+    print('# of word tokens: {}'.format(len(words)))
+    print('# of word types: {}'.format(len(word_counts)))
+
+    fout = open('dat/text_processing/word_types-token-lemma.txt', 'w')
+    for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
