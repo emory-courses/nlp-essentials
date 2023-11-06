@@ -20,23 +20,22 @@ from collections import Counter
 
 CORPUS = 'dat/text_processing/emory-wiki.txt'
 
-
-def top_k_words(word_counts: dict[str, int], k: int, top=True):
-    return sorted(word_counts.items(), key=lambda x: x[1], reverse=top)[:k]
-
-
 if __name__ == '__main__':
+    # Word Count
     words = open(CORPUS).read().split()
     word_counts = Counter(words)
 
     print('# of word tokens: {}'.format(len(words)))
     print('# of word types: {}'.format(len(word_counts)))
 
-    topk = top_k_words(word_counts, 10)
-    for word, count in topk: print(word, count)
+    # Top-k Frequent Words
+    wc_des = sorted(word_counts.items(), key=lambda x: x[1], reverse=True)
+    for word, count in wc_des[:10]: print(word, count)
 
-    topk = top_k_words(word_counts, 10, False)
-    for word, count in topk: print(word, count)
+    wc_asc = sorted(word_counts.items(), key=lambda x: x[1])
+    for word, count in wc_asc[:10]: print(word, count)
 
+    # Save Output
     fout = open('dat/text_processing/word_types.txt', 'w')
     for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
+    fout.close()

@@ -31,8 +31,11 @@ def get_lemma_lexica() -> SimpleNamespace:
         nouns_irregular=json.load(open('dat/text_processing/nouns_irregular.json')),
         verbs_irregular=json.load(open('dat/text_processing/verbs_irregular.json')),
         nouns_rules=json.load(open('dat/text_processing/nouns_rules.json')),
-        verbs_rules=json.load(open('dat/text_processing/verbs_rules.json')),
+        verbs_rules=json.load(open('dat/text_processing/verbs_rules.json'))
     )
+
+
+
 
 
 def lemmatize(word: str, lexica: SimpleNamespace) -> str:
@@ -48,7 +51,10 @@ def lemmatize(word: str, lexica: SimpleNamespace) -> str:
 
     word = word.lower()
     lemma = aux(word, lexica.verbs, lexica.verbs_irregular, lexica.verbs_rules)
-    if lemma is None: lemma = aux(word, lexica.nouns, lexica.nouns_irregular, lexica.nouns_rules)
+
+    if lemma is None:
+        lemma = aux(word, lexica.nouns, lexica.nouns_irregular, lexica.nouns_rules)
+
     return lemma if lemma else word
 
 

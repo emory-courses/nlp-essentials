@@ -23,37 +23,38 @@ from src.word_counting import CORPUS
 DELIMITERS = {'"', "'", '(', ')', '[', ']', ':', '-', ',', '.'}
 
 
-def delimit(token: str, delimiters: set[str]) -> list[str]:
-    i = next((i for i, c in enumerate(token) if c in delimiters), -1)
-    if i < 0: return [token]
-    tokens = []
+def delimit(word: str, delimiters: set[str]) -> list[str]:
+    i = next((i for i, c in enumerate(word) if c in delimiters), -1)
+    if i < 0: return [word]
 
-    if i > 0: tokens.append(token[:i])
-    tokens.append(token[i])
-    if i + 1 < len(token): tokens.extend(delimit(token[i + 1:], delimiters))
+    tokens = []
+    if i > 0: tokens.append(word[:i])
+    tokens.append(word[i])
+
+    if i + 1 < len(word):
+        tokens.extend(delimit(word[i + 1:], delimiters))
     return tokens
 
 
 def postprocess(tokens: list[str]) -> list[str]:
     i, new_tokens = 0, []
+
     while i < len(tokens):
-        # apostrophe: 's
         if i + 1 < len(tokens) and tokens[i] == "'" and tokens[i + 1].lower() == 's':
             new_tokens.append(''.join(tokens[i:i + 2]))
             i += 1
-        # numbers: [##], ###,###
         elif i + 2 < len(tokens) and \
-                ((tokens[i] == '[' and tokens[i + 1].isnumeric() and tokens[i + 2] == ']') or \
+                ((tokens[i] == '[' and tokens[i + 1].isnumeric() and tokens[i + 2] == ']') or
                  (tokens[i].isnumeric() and tokens[i + 1] == ',' and tokens[i + 2].isnumeric())):
             new_tokens.append(''.join(tokens[i:i + 3]))
             i += 2
-        # acronyms: U.S.
         elif i + 3 < len(tokens) and ''.join(tokens[i:i + 4]) == 'U.S.':
             new_tokens.append(''.join(tokens[i:i + 4]))
             i += 3
         else:
             new_tokens.append(tokens[i])
         i += 1
+
     return new_tokens
 
 
@@ -63,10 +64,17 @@ def tokenize(corpus: str, delimiters: set[str]) -> list[str]:
 
 
 if __name__ == '__main__':
+    # delimit()
     tests = ['"R1:', '(R&D)', '15th-largest', 'Atlanta,', "Department's", 'activity"[26]', 'centers.[21][22]', '149,000', 'U.S.']
+
+    for test in tests:
+        print('{} -> {}'.format(test, delimit(test, DELIMITERS)))
+
+    # postprocess()
     for test in tests:
         print('{} -> {}'.format(test, postprocess(delimit(test, DELIMITERS))))
 
+    # tokenize()
     words = tokenize(CORPUS, DELIMITERS)
     word_counts = Counter(words)
 

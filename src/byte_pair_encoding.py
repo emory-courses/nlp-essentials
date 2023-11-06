@@ -21,7 +21,7 @@ import re
 
 from src.types import WordCount, PairCount
 
-EOW = '[EOW]'
+EOW = '[EoW]'
 
 
 def initialize(word_counts: WordCount) -> WordCount:
@@ -45,11 +45,17 @@ def maximize(vocab: WordCount, pairs: PairCount) -> WordCount:
     return {p.sub(''.join(best), word): freq for word, freq in vocab.items()}
 
 
-if __name__ == '__main__':
-    word_counts = {'high': 12, 'higher': 14, 'highest': 10, 'low': 12, 'lower': 11, 'lowest': 13}
+def bpe_vocab(word_counts: WordCount, max_iter: int):
     vocab = initialize(word_counts)
 
-    for i in range(10):
+    for i in range(max_iter):
         pairs = expect(vocab)
         vocab = maximize(vocab, pairs)
-        print(vocab)
+        # print(vocab)
+
+    return vocab
+
+if __name__ == '__main__':
+    word_counts = {'high': 12, 'higher': 14, 'highest': 10, 'low': 12, 'lower': 11, 'lowest': 13}
+    vocab = bpe_vocab(word_counts, 10)
+
