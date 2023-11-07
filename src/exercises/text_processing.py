@@ -16,8 +16,5 @@
 
 __author__ = 'Jinho D. Choi'
 
-from typing import TypeAlias
-
-WordCount: TypeAlias = dict[str, int]
-PairCount: TypeAlias = dict[tuple[str, str], int]
-
+if __name__ == '__main__':
+    pass

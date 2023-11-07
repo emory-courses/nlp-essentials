@@ -35,9 +35,6 @@ def get_lemma_lexica() -> SimpleNamespace:
     )
 
 
-
-
-
 def lemmatize(word: str, lexica: SimpleNamespace) -> str:
     def aux(word: str, vocabs: dict[str, str], irregular: dict[str, str], rules: list[tuple[str, str]]):
         lemma = irregular.get(word, None)
