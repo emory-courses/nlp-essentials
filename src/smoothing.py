@@ -1,5 +1,5 @@
 # ========================================================================
-# Copyright 2023 Emory University
+# Copyright 2024 Emory University
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,13 +16,18 @@
 
 __author__ = 'Jinho D. Choi'
 
+from src.types import Unigram
 
-def chronicles_of_narnia(filepath: str) -> dict:
-    fin = open(filepath)
-    # TO BE UPDATED
 
+def unigram_estimation_smoothing(filepath: str) -> Unigram:
+    unigrams, total = Counter(), 0
+
+    for line in open(filepath):
+        words = line.split()
+        unigrams.update(words)
+        total += len(words)
+
+    return {word: count / total for word, count in unigrams.items()}
 
 if __name__ == '__main__':
-    txtfile = 'dat/chronicles_of_narnia.txt'
-    d = chronicles_of_narnia(txtfile)
-    print(d)
+    pass

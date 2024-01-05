@@ -16,45 +16,61 @@
 
 __author__ = 'Jinho D. Choi'
 
-from collections import Counter
-from typing import DefaultDict
+from collections import Counter, defaultdict
 
-from src import types
+from src.types import Unigram, Bigram
 
 
-def unigram_estimation(filepath: str) -> dict[str, float]:
-    unigrams, total = Counter(), 0
+def unigram_count(filepath: str) -> Counter:
+    unigrams = Counter()
 
     for line in open(filepath):
         words = line.split()
         unigrams.update(words)
-        total += len(words)
 
+    return unigrams
+
+
+def unigram_estimation(filepath: str) -> Unigram:
+    unigrams = unigram_count(filepath)
+    total = sum(unigrams.values())
     return {word: count / total for word, count in unigrams.items()}
 
 
-def bigram_estimation(filepath: str) -> dict[tuple[str, str], float]:
-    unigrams, bigrams = Counter(), Counter()
+def bigram_count(filepath: str) -> dict[str, Counter]:
+    bigrams = defaultdict(Counter)
 
     for line in open(filepath):
         words = line.split()
-        unigrams.update(words)
-        bigrams.update([(words[i], words[i+1]) for i in range(len(words) - 1)])
+        for i in range(1, len(words)):
+            bigrams[words[i - 1]].update([words[i]])
 
-    return {(w1, w2): count / unigrams[w1] for (w1, w2), count in bigrams.items()}
+    return bigrams
+
+def bigram_estimation(filepath: str) -> Bigram:
+    counts = bigram_count(filepath)
+    bigrams = dict()
+
+    for prev, ccs in counts.items():
+        total = sum(ccs.values())
+        bigrams[prev] = {curr: count / total for curr, count in ccs.items()}
+
+    return bigrams
+
 
 if __name__ == '__main__':
     # unigram estimation
-    # unigrams = unigram_estimation('dat/chronicles_of_narnia.txt')
-    # unigram_list = [(word, prob) for word, prob in sorted(unigrams.items(), key=lambda x: x[1], reverse=True)]
-    #
-    # for word, prob in unigram_list[:300]:
-    #     if word[0].isupper() and word.lower() not in unigrams:
-    #         print("{:>10} {:.6f}".format(word, prob))
+    unigrams = unigram_estimation('dat/chronicles_of_narnia.txt')
+    unigram_list = [(word, prob) for word, prob in sorted(unigrams.items(), key=lambda x: x[1], reverse=True)]
+
+    for word, prob in unigram_list[:300]:
+        if word[0].isupper() and word.lower() not in unigrams:
+            print("{:>10} {:.6f}".format(word, prob))
 
     # bigram estimation
     bigrams = bigram_estimation('dat/chronicles_of_narnia.txt')
-    bigram_list = [(' '.join(bigram), prob) for bigram, prob in sorted(bigrams.items(), key=lambda x: x[1], reverse=True)]
-
-    for bigram, prob in bigram_list[:10]:
-        print("{:>20} {:.6f}".format(bigram, prob))
+    for prev in ['I', 'the', 'said']:
+        print(prev)
+        bigram_list = [(curr, prob) for curr, prob in sorted(bigrams[prev].items(), key=lambda x: x[1], reverse=True)]
+        for curr, prob in bigram_list[:10]:
+            print("{:>10} {:.6f}".format(curr, prob))
