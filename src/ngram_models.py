@@ -17,6 +17,7 @@
 __author__ = 'Jinho D. Choi'
 
 from collections import Counter, defaultdict
+from collections.abc import Callable
 
 from src.types import Unigram, Bigram
 
@@ -32,9 +33,9 @@ def unigram_count(filepath: str) -> Counter:
 
 
 def unigram_estimation(filepath: str) -> Unigram:
-    unigrams = unigram_count(filepath)
-    total = sum(unigrams.values())
-    return {word: count / total for word, count in unigrams.items()}
+    counts = unigram_count(filepath)
+    total = sum(counts.values())
+    return {word: count / total for word, count in counts.items()}
 
 
 def bigram_count(filepath: str) -> dict[str, Counter]:
@@ -47,6 +48,7 @@ def bigram_count(filepath: str) -> dict[str, Counter]:
 
     return bigrams
 
+
 def bigram_estimation(filepath: str) -> Bigram:
     counts = bigram_count(filepath)
     bigrams = dict()
@@ -58,19 +60,25 @@ def bigram_estimation(filepath: str) -> Bigram:
     return bigrams
 
 
-if __name__ == '__main__':
-    # unigram estimation
-    unigrams = unigram_estimation('dat/chronicles_of_narnia.txt')
+def test_unigram(filepath: str, estimator: Callable[[str], Unigram]):
+    unigrams = estimator(filepath)
     unigram_list = [(word, prob) for word, prob in sorted(unigrams.items(), key=lambda x: x[1], reverse=True)]
 
     for word, prob in unigram_list[:300]:
         if word[0].isupper() and word.lower() not in unigrams:
             print("{:>10} {:.6f}".format(word, prob))
 
-    # bigram estimation
-    bigrams = bigram_estimation('dat/chronicles_of_narnia.txt')
+
+def test_bigram(filepath: str, estimator: Callable[[str], Bigram]):
+    bigrams = bigram_estimation(filepath)
     for prev in ['I', 'the', 'said']:
         print(prev)
         bigram_list = [(curr, prob) for curr, prob in sorted(bigrams[prev].items(), key=lambda x: x[1], reverse=True)]
         for curr, prob in bigram_list[:10]:
             print("{:>10} {:.6f}".format(curr, prob))
+
+
+if __name__ == '__main__':
+    corpus = 'dat/chronicles_of_narnia.txt'
+    test_unigram(corpus, unigram_estimation)
+    test_bigram(corpus, bigram_estimation)

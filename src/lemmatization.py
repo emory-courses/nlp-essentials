@@ -21,7 +21,6 @@ from collections import Counter
 from types import SimpleNamespace
 
 from src.tokenization import tokenize, DELIMITERS
-from src.word_counting import CORPUS
 
 
 def get_lemma_lexica() -> SimpleNamespace:
@@ -64,7 +63,8 @@ if __name__ == '__main__':
     test_verbs = ['applies', 'cried', 'pushes', 'entered', 'takes', 'heard', 'lying', 'studying', 'taking', 'drawn', 'clung', 'was', 'bought']
     for word in test_verbs: print('{} -> {}'.format(word, lemmatize(word, lemma_lexica)))
 
-    words = [lemmatize(word, lemma_lexica) for word in tokenize(CORPUS, DELIMITERS)]
+    corpus = 'dat/text_processing/emory-wiki.txt'
+    words = [lemmatize(word, lemma_lexica) for word in tokenize(corpus, DELIMITERS)]
     word_counts = Counter(words)
 
     print('# of word tokens: {}'.format(len(words)))

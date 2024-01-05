@@ -18,8 +18,6 @@ __author__ = 'Jinho D. Choi'
 
 from collections import Counter
 
-from src.word_counting import CORPUS
-
 DELIMITERS = {'"', "'", '(', ')', '[', ']', ':', '-', ',', '.'}
 
 
@@ -75,7 +73,8 @@ if __name__ == '__main__':
         print('{} -> {}'.format(test, postprocess(delimit(test, DELIMITERS))))
 
     # tokenize()
-    words = tokenize(CORPUS, DELIMITERS)
+    corpus = 'dat/text_processing/emory-wiki.txt'
+    words = tokenize(corpus, DELIMITERS)
     word_counts = Counter(words)
 
     print('# of word tokens: {}'.format(len(words)))

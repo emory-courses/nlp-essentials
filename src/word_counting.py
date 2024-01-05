@@ -18,11 +18,10 @@ __author__ = 'Jinho D. Choi'
 
 from collections import Counter
 
-CORPUS = 'dat/text_processing/emory-wiki.txt'
-
 if __name__ == '__main__':
     # Word Count
-    words = open(CORPUS).read().split()
+    corpus = 'dat/text_processing/emory-wiki.txt'
+    words = open(corpus).read().split()
     word_counts = Counter(words)
 
     print('# of word tokens: {}'.format(len(words)))
