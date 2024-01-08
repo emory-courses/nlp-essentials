@@ -16,7 +16,7 @@
 
 __author__ = 'Jinho D. Choi'
 
-from src.ngram_models import unigram_count
+from src.ngram_models import unigram_count, test_unigram
 from src.types import Unigram
 
 UNKNOWN = ''
@@ -32,10 +32,5 @@ def unigram_smoothing(filepath: str) -> Unigram:
 
 
 if __name__ == '__main__':
-    # unigram estimation
-    unigrams = unigram_smoothing('dat/chronicles_of_narnia.txt')
-    unigram_list = [(word, prob) for word, prob in sorted(unigrams.items(), key=lambda x: x[1], reverse=True)]
-
-    for word, prob in unigram_list[:300]:
-        if word[0].isupper() and word.lower() not in unigrams:
-            print("{:>10} {:.6f}".format(word, prob))
+    corpus = 'dat/chronicles_of_narnia.txt'
+    test_unigram(corpus, unigram_smoothing)

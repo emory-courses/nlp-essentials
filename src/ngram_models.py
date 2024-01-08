@@ -70,7 +70,7 @@ def test_unigram(filepath: str, estimator: Callable[[str], Unigram]):
 
 
 def test_bigram(filepath: str, estimator: Callable[[str], Bigram]):
-    bigrams = bigram_estimation(filepath)
+    bigrams = estimator(filepath)
     for prev in ['I', 'the', 'said']:
         print(prev)
         bigram_list = [(curr, prob) for curr, prob in sorted(bigrams[prev].items(), key=lambda x: x[1], reverse=True)]
@@ -80,5 +80,5 @@ def test_bigram(filepath: str, estimator: Callable[[str], Bigram]):
 
 if __name__ == '__main__':
     corpus = 'dat/chronicles_of_narnia.txt'
-    test_unigram(corpus, unigram_estimation)
+    # test_unigram(corpus, unigram_estimation)
     test_bigram(corpus, bigram_estimation)
