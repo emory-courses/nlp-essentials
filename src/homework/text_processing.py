@@ -16,6 +16,8 @@
 
 __author__ = 'Jinho D. Choi'
 
+import re
+
 
 def chronicles_of_narnia(filepath: str) -> dict:
     # To be updated
@@ -33,3 +35,6 @@ if __name__ == '__main__':
     txtfile = 'dat/chronicles_of_narnia.txt'
     d = chronicles_of_narnia(txtfile)
     print(d)
+
+    r = re.compile(RE_Abbreviation)
+    print(r.match('Dr.'))
