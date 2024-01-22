@@ -18,9 +18,16 @@ __author__ = 'Jinho D. Choi'
 
 
 def chronicles_of_narnia(filepath: str) -> dict:
-    fin = open(filepath)
-    # TO BE UPDATED
+    # To be updated
+    pass
 
+
+RE_Abbreviation = r'to be filled'
+RE_Apostrophe = r'to be filled'
+RE_Concatenation = r'to be filled'
+RE_Hyperlink = r'to be filled'
+RE_Number = r'to be filled'
+RE_Unit = r'to be filled'
 
 if __name__ == '__main__':
     txtfile = 'dat/chronicles_of_narnia.txt'

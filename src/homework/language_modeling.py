@@ -16,5 +16,15 @@
 
 __author__ = 'Jinho D. Choi'
 
+from src.types import Bigram
+
+
+def bigram_model(filepath: str) -> Bigram:
+    # To be updated
+    pass
+
+
+
 if __name__ == '__main__':
     pass
+

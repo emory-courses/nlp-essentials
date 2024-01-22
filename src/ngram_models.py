@@ -80,5 +80,5 @@ def test_bigram(filepath: str, estimator: Callable[[str], Bigram]):
 
 if __name__ == '__main__':
     corpus = 'dat/chronicles_of_narnia.txt'
-    # test_unigram(corpus, unigram_estimation)
+    test_unigram(corpus, unigram_estimation)
     test_bigram(corpus, bigram_estimation)
