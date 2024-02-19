@@ -16,12 +16,14 @@
 
 __author__ = 'Jinho D. Choi'
 
-import string
+from collections import Counter
+from string import punctuation
 from typing import Callable
 
 from elit_tokenizer import EnglishTokenizer
 
 from src.bag_of_words_model import vocabulary, bag_of_words
+from src.types import Vocab, Document, SparseVector
 
 
 def read_corpus(filename: str, tokenizer: Callable[[str], list[str]] | None = None):
@@ -30,35 +32,36 @@ def read_corpus(filename: str, tokenizer: Callable[[str], list[str]] | None = No
     return [tokenizer(line) for line in fin]
 
 
+def print_tfs(vocab: Vocab, documents: list[Document]):
+    vs = [bag_of_words(vocab, document) for document in documents]
+    words = [word for word, _ in sorted(vocab.items(), key=lambda x: x[1])]
+    for v in vs:
+        print([(words[index], count) for index, count in sorted(v.items(), key=lambda x: x[1], reverse=True)])
+
+
+def document_frequencies(vocab: Vocab, documents: list[Document]) -> SparseVector:
+    pass
+
 if __name__ == '__main__':
     # Term Frequency
     corpus = read_corpus('dat/chronicles_of_narnia.txt')
     vocab = vocabulary(corpus)
-    documents = [
+    ds = [
         "As dawn broke, the first light kissed the golden mane of Aslan, the rightful king of Narnia.",
         "The White Witch's icy breath froze the once lush meadows, casting a shadow over Narnia.",
         "Lucy's footsteps echoed in the halls of Cair Paravel, where legends were born."
     ]
 
     etok = EnglishTokenizer()
-    tokenizer = lambda s: etok.decode(s).tokens
-    vs = [bag_of_words(vocab, tokenizer(document)) for document in documents]
-    words = [word for word, _ in sorted(vocab.items(), key=lambda x: x[1])]
-    # for v in vs: print([(words[index], count) for index, count in sorted(v.items(), key=lambda x: x[1], reverse=True)])
+    documents = [etok.decode(d).tokens  for d in ds]
+    print_tfs(vocab, documents)
 
     # Stop Words
     stopwords = {line.strip().lower() for line in open('dat/stopwords.txt')}
-    is_stopwords = lambda w: w.lower() in stopwords or w in string.punctuation
-    sw_tokenizer = lambda s: [word for word in s.split() if not is_stopwords(word)]
+    is_stopwords = lambda w: w.lower() in stopwords or w in punctuation
 
+    sw_tokenizer = lambda s: [word for word in s.split() if not is_stopwords(word)]
     corpus = read_corpus('dat/chronicles_of_narnia.txt', sw_tokenizer)
     vocab = vocabulary(corpus)
 
-    vs = [bag_of_words(vocab, tokenizer(document)) for document in documents]
-    words = [word for word, _ in sorted(vocab.items(), key=lambda x: x[1])]
-    for v in vs: print([(words[index], count) for index, count in sorted(v.items(), key=lambda x: x[1], reverse=True)])
-
-
-
-
-
+    print_tfs(vocab, documents)

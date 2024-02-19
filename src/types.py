@@ -23,3 +23,7 @@ Bigram: TypeAlias = dict[str, dict[str, float] | float]
 
 WordCount: TypeAlias = dict[str, int]
 PairCount: TypeAlias = dict[tuple[str, str], int]
+
+Document: TypeAlias = list[str]
+Vocab: TypeAlias = dict[str, int]
+SparseVector: TypeAlias = dict[int, int]

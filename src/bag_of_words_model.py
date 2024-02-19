@@ -17,11 +17,8 @@
 __author__ = 'Jinho D. Choi'
 
 from collections import Counter
-from typing import TypeAlias
 
-Document: TypeAlias = list[str]
-Vocab: TypeAlias = dict[str, int]
-SparceVector: TypeAlias = dict[int, int]
+from src.types import Document, Vocab, SparseVector
 
 
 def vocabulary(documents: list[Document]) -> Vocab:
@@ -33,7 +30,7 @@ def vocabulary(documents: list[Document]) -> Vocab:
     return {word: i for i, word in enumerate(sorted(list(vocab)))}
 
 
-def bag_of_words(vocab: Vocab, document: Document) -> SparceVector:
+def bag_of_words(vocab: Vocab, document: Document) -> SparseVector:
     counts = Counter(document)
     return {vocab[word]: count for word, count in sorted(counts.items()) if word in vocab}
 
