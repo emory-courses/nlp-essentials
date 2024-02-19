@@ -32,8 +32,8 @@ RE_Number = r'to be filled'
 RE_Unit = r'to be filled'
 
 if __name__ == '__main__':
-    txtfile = 'dat/chronicles_of_narnia.txt'
-    d = chronicles_of_narnia(txtfile)
+    filepath = 'dat/chronicles_of_narnia.txt'
+    d = chronicles_of_narnia(filepath)
     print(d)
 
     r = re.compile(RE_Abbreviation)

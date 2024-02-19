@@ -24,7 +24,12 @@ def bigram_model(filepath: str) -> Bigram:
     pass
 
 
-
-if __name__ == '__main__':
+def sequence_generator(bigram_probs: Bigram, init_word: str, length: int = 20) -> tuple[list[str], float]:
+    # To be updated
     pass
 
+
+if __name__ == '__main__':
+    filepath = 'dat/chronicles_of_narnia.txt'
+    bigram_probs = bigram_model(filepath)
+    sequence_generator(bigram_probs, 'I')
