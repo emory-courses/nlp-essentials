@@ -26,4 +26,4 @@ PairCount: TypeAlias = dict[tuple[str, str], int]
 
 Document: TypeAlias = list[str]
 Vocab: TypeAlias = dict[str, int]
-SparseVector: TypeAlias = dict[int, int]
+SparseVector: TypeAlias = dict[int, int | float]

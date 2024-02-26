@@ -21,7 +21,7 @@ import re
 
 def chronicles_of_narnia(filepath: str) -> dict:
     # To be updated
-    pass
+    return dict()
 
 
 RE_Abbreviation = r'to be filled'
