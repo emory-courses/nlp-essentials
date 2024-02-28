@@ -18,6 +18,9 @@ __author__ = 'Jinho D. Choi'
 
 from src.types import Bigram
 
+UNKNOWN = ''
+INIT = '[INIT]'
+
 
 def bigram_model(filepath: str) -> Bigram:
     # To be updated
@@ -25,6 +28,11 @@ def bigram_model(filepath: str) -> Bigram:
 
 
 def sequence_generator(bigram_probs: Bigram, init_word: str, length: int = 20) -> tuple[list[str], float]:
+    # To be updated
+    pass
+
+
+def sequence_generator_max(bigram_probs: Bigram, init_word: str, length: int = 20) -> tuple[list[str], float]:
     # To be updated
     pass
 
