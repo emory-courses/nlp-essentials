@@ -52,8 +52,8 @@ def vectorize(vocab: Vocab, dfs: SparseVector, D: int, docset: dict[int, list[Do
     return vs
 
 
-def knn(trn_vs: list[tuple[int, SparseVector]], document: SparseVector, k: int = 1) -> tuple[int, float]:
-    sims = [(book_id, cosine_similarity(document, v)) for book_id, v in trn_vs]
+def knn(trn_vs: list[tuple[int, SparseVector]], v: SparseVector, k: int = 1) -> tuple[int, float]:
+    sims = [(book_id, cosine_similarity(v, t)) for book_id, t in trn_vs]
     sims.sort(key=lambda x: x[1], reverse=True)
     return Counter(sims[:k]).most_common(1)[0][0]
 
@@ -74,8 +74,10 @@ if __name__ == '__main__':
     tst_vs = vectorize(vocab, dfs, D, tst)
 
     correct = 0
+
     for g_book_id, document in dev_vs:
         p_book_id, p_score = knn(trn_vs, document)
-        print('Gold: {}, Auto: {}, Score: {:.2f}'.format(g_book_id, p_book_id, p_score))
         if g_book_id == p_book_id: correct += 1
+        print('Gold: {}, Auto: {}, Score: {:.2f}'.format(g_book_id, p_book_id, p_score))
+
     print('Accuracy: {} ({}/{})'.format(100 * correct / len(dev_vs), correct, len(dev_vs)))
