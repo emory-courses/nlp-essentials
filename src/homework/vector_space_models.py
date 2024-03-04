@@ -30,6 +30,11 @@ def sentiment_analyzer(trn_dat: list[tuple[int, str]], tst_dat: list[tuple[int, 
     return []
 
 
+def sentiment_analyzer_extra(trn_dat: list[tuple[int, str]], tst_dat: list[tuple[int, str]]) -> list[tuple[int, float]]:
+    # To be filled
+    return []
+
+
 if __name__ == '__main__':
     trn_dat = read('dat/sentiment_treebank/sst_trn.tsv')
     dev_dat = read('dat/sentiment_treebank/sst_dev.tsv')
