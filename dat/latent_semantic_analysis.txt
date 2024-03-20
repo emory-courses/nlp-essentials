@@ -1,0 +1,8 @@
+love white cat
+love black cat
+hate white cat
+hate black cat
+love white dog
+love black dog
+hate white dog
+hate black dog
