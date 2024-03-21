@@ -76,19 +76,16 @@ if __name__ == '__main__':
     print_np(S)
     print_np(Vt)
 
-    # k = 4
-    # print_np(np.diag(S)[:k, :k])
+    k = 4
+    U = U[:, :k]
+    S = S[:k, :k]
+    Vt = Vt[:k, :]
 
-    # print(S)
-    # k = 6
-    # U = U[:, :k]
-    # S = np.diag(S[:k])
-    # V = Vt[:k, :].transpose()
-    #
-    # for i, document in enumerate(D):
-    #     t = np.dot(U[i], S)
-    #     print('{:>10}: {}'.format(' '.join(document), ['{:5.2f}'.format(f) for f in t]))
-    #
-    # for term, j in sorted(T.items(), key=lambda x: x[1]):
-    #     t = np.dot(V[j], S)
-    #     print('{:>5}: {}'.format(term, ['{:5.2f}'.format(f) for f in t]))
+    for i, document in enumerate(D):
+        t = np.dot(U[i], S)
+        print('{}: [{}]'.format(' '.join(document), ', '.join(['{:5.2f}'.format(f) for f in t])))
+
+    V = Vt.transpose()
+    for term, j in sorted(T.items(), key=lambda x: x[1]):
+        t = np.dot(V[j], S)
+        print('{:>5}: [{}]'.format(term, ', '.join(['{:5.2f}'.format(f) for f in t])))
