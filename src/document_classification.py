@@ -65,7 +65,7 @@ if __name__ == '__main__':
     print(len(join_documents(trn)), len(join_documents(dev)), len(join_documents(tst)))
 
     corpus = join_documents(trn)
-    vocab = vocabulary(join_documents(trn))
+    vocab = vocabulary(corpus)
     dfs = document_frequencies(vocab, corpus)
     D = len(corpus)
 

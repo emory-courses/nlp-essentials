@@ -16,5 +16,28 @@
 
 __author__ = 'Jinho D. Choi'
 
-if __name__ == '__main__':
+import numpy as np
+
+
+def read_word_embeddings(filepath: str) -> dict[str, np.array]:
+    # To be filled
     pass
+
+
+def similar_words(word_embeddings: dict[str, np.array], target_word: str, threshold: float = 0.8) -> list[tuple[str, float]]:
+    # To be filled
+    pass
+
+
+def document_similarity(word_embeddings: dict[str, np.array], d1: str, d2: str) -> float:
+    # To be filled
+    pass
+
+
+if __name__ == '__main__':
+    filepath = 'dat/word_embeddings.txt'
+    word_embeddings = read_word_embeddings(filepath)
+    similar_words(word_embeddings, 'America')
+    d1 = 'I love this movie'
+    d2 = 'I hate this movie'
+    document_similarity(word_embeddings, d1, d2)
