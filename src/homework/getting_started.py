@@ -15,6 +15,7 @@
 # ========================================================================
 
 from elit_tokenizer import EnglishTokenizer
+
 __author__ = 'Jinho D. Choi'
 
 if __name__ == '__main__':

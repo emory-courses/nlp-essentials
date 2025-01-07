@@ -1,7 +1,7 @@
-# NLP Essentials in the Modern Era
+# NLP Essentials
 
 Course materials for http://emory.gitbook.io/nlp-essentials
 
-## Contact
+## Author
 
 * [Jinho D. Choi](https://www.emorynlp.org/faculty/jinho-choi)
