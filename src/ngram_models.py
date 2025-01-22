@@ -18,8 +18,10 @@ __author__ = 'Jinho D. Choi'
 
 from collections import Counter, defaultdict
 from collections.abc import Callable
+from typing import TypeAlias
 
-from src.types import Unigram, Bigram
+Unigram: TypeAlias = dict[str, float]
+Bigram: TypeAlias = dict[str, Unigram | float]
 
 
 def unigram_count(filepath: str) -> Counter:
@@ -66,7 +68,7 @@ def test_unigram(filepath: str, estimator: Callable[[str], Unigram]):
 
     for word, prob in unigram_list[:300]:
         if word[0].isupper() and word.lower() not in unigrams:
-            print("{:>10} {:.6f}".format(word, prob))
+            print(f'{word:>10} {prob:.6f}')
 
 
 def test_bigram(filepath: str, estimator: Callable[[str], Bigram]):
@@ -75,7 +77,7 @@ def test_bigram(filepath: str, estimator: Callable[[str], Bigram]):
         print(prev)
         bigram_list = [(curr, prob) for curr, prob in sorted(bigrams[prev].items(), key=lambda x: x[1], reverse=True)]
         for curr, prob in bigram_list[:10]:
-            print("{:>10} {:.6f}".format(curr, prob))
+            print(f'{curr:>10} {prob:.6f}')
 
 
 if __name__ == '__main__':

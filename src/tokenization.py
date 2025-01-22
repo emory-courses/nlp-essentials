@@ -18,19 +18,20 @@ __author__ = 'Jinho D. Choi'
 
 from collections import Counter
 
-DELIMITERS = {'"', "'", '(', ')', '[', ']', ':', '-', ',', '.'}
+from src.frequency_analysis import save_output
 
 
 def delimit(word: str, delimiters: set[str]) -> list[str]:
     i = next((i for i, c in enumerate(word) if c in delimiters), -1)
     if i < 0: return [word]
-
     tokens = []
+
     if i > 0: tokens.append(word[:i])
     tokens.append(word[i])
 
     if i + 1 < len(word):
         tokens.extend(delimit(word[i + 1:], delimiters))
+
     return tokens
 
 
@@ -57,28 +58,46 @@ def postprocess(tokens: list[str]) -> list[str]:
 
 
 def tokenize(corpus: str, delimiters: set[str]) -> list[str]:
-    tmp = open(corpus).read().split()
-    return [token for t in tmp for token in postprocess(delimit(t, delimiters))]
+    with open(corpus) as fin:
+        words = fin.read().split()
+    return [token for word in words for token in postprocess(delimit(word, delimiters))]
 
 
 if __name__ == '__main__':
-    # delimit()
-    tests = ['"R1:', '(R&D)', '15th-largest', 'Atlanta,', "Department's", 'activity"[26]', 'centers.[21][22]', '149,000', 'U.S.']
+    delims = {'"', "'", '(', ')', '[', ']', ':', '-', ',', '.'}
 
-    for test in tests:
-        print('{} -> {}'.format(test, delimit(test, DELIMITERS)))
+    input = [
+        '"R1:',
+        '(R&D)',
+        '15th-largest',
+        'Atlanta,',
+        "Department's",
+        'activity"[26]',
+        'centers.[21][22]',
+        '149,000',
+        'U.S.'
+    ]
 
-    # postprocess()
-    for test in tests:
-        print('{} -> {}'.format(test, postprocess(delimit(test, DELIMITERS))))
+    # Delimiters
+    output = [delimit(word, delims) for word in input]
 
-    # tokenize()
-    corpus = 'dat/text_processing/emory-wiki.txt'
-    words = tokenize(corpus, DELIMITERS)
-    word_counts = Counter(words)
+    for word, tokens in zip(input, output):
+        print('{:<16} -> {}'.format(word, tokens))
 
-    print('# of word tokens: {}'.format(len(words)))
-    print('# of word types: {}'.format(len(word_counts)))
+    # Postprocessing
+    output = [postprocess(delimit(word, delims)) for word in input]
 
-    fout = open('dat/text_processing/word_types-token.txt', 'w')
-    for key in sorted(word_counts.keys()): fout.write('{}\n'.format(key))
+    for word, tokens in zip(input, output):
+        print('{:<16} -> {}'.format(word, tokens))
+
+    # Tokenizing
+    corpus = 'dat/emory-wiki.txt'
+    output = 'dat/word_types-token.txt'
+
+    words = tokenize(corpus, delims)
+    counts = Counter(words)
+
+    print(f'# of word tokens: {len(words)}')
+    print(f'# of word types: {len(counts)}')
+
+    save_output(counts, output)
