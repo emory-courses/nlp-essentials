@@ -16,7 +16,7 @@
 
 __author__ = 'Jinho D. Choi'
 
-from src.types import Bigram
+from src.ngram_models import Bigram
 
 UNKNOWN = ''
 INIT = '[INIT]'

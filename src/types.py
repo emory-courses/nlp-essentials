@@ -16,10 +16,7 @@
 
 __author__ = 'Jinho D. Choi'
 
-from typing import TypeAlias, Union
-
-Unigram: TypeAlias = dict[str, float]
-Bigram: TypeAlias = dict[str, dict[str, float] | float]
+from typing import TypeAlias
 
 WordCount: TypeAlias = dict[str, int]
 PairCount: TypeAlias = dict[tuple[str, str], int]

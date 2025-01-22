@@ -65,9 +65,7 @@ if __name__ == '__main__':
 
     # search()
     s1 = 'Mr. and Ms. Wayne are here'
-    print(re_mr.match(s1))
     s2 = 'Here are Mr. and Ms. Wayne'
-    print(re_mr.match(s2))
 
     print(re_mr.search(s1))
     print(re_mr.search(s2))
