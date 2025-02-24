@@ -18,9 +18,8 @@ __author__ = 'Jinho D. Choi'
 
 import math
 
-from src.bag_of_words_model import vocabulary
+from src.bag_of_words_model import vocabulary, SparseVector
 from src.term_weighing import read_corpus, document_frequencies, tf_idf
-from src.types import SparseVector
 
 
 def euclidean_distance(v1: SparseVector, v2: SparseVector) -> float:

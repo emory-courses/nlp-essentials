@@ -18,14 +18,18 @@ __author__ = 'Jinho D. Choi'
 
 import collections
 import re
-
-from src.types import WordCount, PairCount
+from typing import TypeAlias
 
 EOW = '[EoW]'
+
+WordCount: TypeAlias = dict[str, int]
 
 
 def initialize(word_counts: WordCount) -> WordCount:
     return {' '.join(list(word) + [EOW]): count for word, count in word_counts.items()}
+
+
+PairCount: TypeAlias = dict[tuple[str, str], int]
 
 
 def expect(vocab: WordCount) -> PairCount:

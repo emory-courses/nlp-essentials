@@ -17,8 +17,11 @@
 __author__ = 'Jinho D. Choi'
 
 from collections import Counter
+from typing import TypeAlias
 
-from src.types import Document, Vocab, SparseVector
+Document: TypeAlias = list[str]
+Vocab: TypeAlias = dict[str, int]
+SparseVector: TypeAlias = dict[int, int | float]
 
 
 def vocabulary(documents: list[Document]) -> Vocab:
