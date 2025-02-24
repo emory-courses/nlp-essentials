@@ -20,7 +20,7 @@ import time
 
 import numpy as np
 
-from src.types import Document, Vocab
+from src.bag_of_words_model import Document, Vocab
 
 
 def retrieve(filename: str) -> tuple[list[Document], Vocab]:

@@ -20,10 +20,9 @@ import glob
 import os
 from collections import Counter
 
-from src.bag_of_words_model import vocabulary
+from src.bag_of_words_model import vocabulary, Document, Vocab, SparseVector
 from src.document_similarity import cosine_similarity
 from src.term_weighing import document_frequencies, tf_idf
-from src.types import Document, SparseVector, Vocab
 
 
 def collect(dirpath: str) -> dict[int, list[Document]]:

@@ -23,8 +23,7 @@ from typing import Callable
 
 from elit_tokenizer import EnglishTokenizer
 
-from src.bag_of_words_model import vocabulary, bag_of_words
-from src.types import Vocab, Document, SparseVector
+from src.bag_of_words_model import vocabulary, bag_of_words, Document, Vocab, SparseVector
 
 
 def read_corpus(filename: str, tokenizer: Callable[[str], list[str]] | None = None) -> list[Document]:
@@ -65,7 +64,7 @@ if __name__ == '__main__':
 
     etok = EnglishTokenizer()
     documents = [etok.decode(d).tokens for d in ds]
-    # print_tfs(vocab, documents)
+    print_tfs(vocab, documents)
 
     # Stop Words
     stopwords = {line.strip().lower() for line in open('dat/stopwords.txt')}
@@ -74,7 +73,7 @@ if __name__ == '__main__':
     sw_tokenizer = lambda s: [word for word in s.split() if not is_stopwords(word)]
     corpus = read_corpus('dat/chronicles_of_narnia.txt', sw_tokenizer)
     vocab = vocabulary(corpus)
-    # print_tfs(vocab, documents)
+    print_tfs(vocab, documents)
 
     # Document Frequency
     corpus = read_corpus('dat/chronicles_of_narnia.txt')
@@ -86,8 +85,8 @@ if __name__ == '__main__':
         bow = bag_of_words(vocab, document)
         tf_df = [(words[tid], tf, dfs[tid]) for tid, tf in sorted(bow.items())]
         tf_df = sorted(tf_df, key=lambda x: (-x[1], x[2]))
-        # print(' '.join(document))
-        # print('\n'.join(['{:>10}  {}  {:>5}'.format(*t) for t in tf_df]))
+        print(' '.join(document))
+        print('\n'.join(['{:>10}  {}  {:>5}'.format(*t) for t in tf_df]))
 
     # TF-IDF
     for document in documents:
