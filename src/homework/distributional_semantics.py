@@ -20,53 +20,19 @@ import numpy as np
 
 
 def read_word_embeddings(filepath: str) -> dict[str, np.array]:
-    embeddings = {}
-    for line in open(filepath, 'r'):
-        parts = line.strip().split()
-        word = parts[0]
-        vector = np.array([float(x) for x in parts[1:]], dtype=np.float32)
-        embeddings[word] = vector
-    return embeddings
-
-def cosine_similarity(u: np.array, v: np.array) -> float:
-    dot_product = np.dot(u, v)
-    norm_u = np.linalg.norm(u)
-    norm_v = np.linalg.norm(v)
-    if norm_u == 0 or norm_v == 0:
-        return 0.0
-    return dot_product / (norm_u * norm_v)
-def similar_words(word_embeddings: dict[str, np.array], target_word: str, threshold: float = 0.8) -> list[tuple[str, float]]:
-    if target_word not in word_embeddings:
-        return []
-    target_embedding = word_embeddings[target_word]
-    similarities = []
-
-    for word, embedding in word_embeddings.items():
-        if word != target_word:
-            sim = cosine_similarity(target_embedding, embedding)
-            if sim >= threshold:
-                similarities.append((word, sim))
-
-    similarities.sort(key=lambda x: x[1], reverse=True)
-    return similarities
+    # To be filled
+    pass
 
 
-def document_embedding(word_embeddings: dict[str, np.array], document: str) -> np.array:
-    embeddings = []
-    for word in document.split():
-        if word in word_embeddings:
-            embeddings.append(word_embeddings[word])
-    if embeddings:
-        return np.mean(embeddings, axis=0)
-    else:
-       return np.zeros_like(next(iter(word_embeddings.values())))
+def similar_words(word_embeddings: dict[str, np.array], target_word: str, threshold: float = 0.8) -> list[
+    tuple[str, float]]:
+    # To be filled
+    pass
 
 
 def document_similarity(word_embeddings: dict[str, np.array], d1: str, d2: str) -> float:
-    doc1_embedding = document_embedding(word_embeddings, d1)
-    doc2_embedding = document_embedding(word_embeddings, d2)
-
-    return cosine_similarity(doc1_embedding, doc2_embedding)
+    # To be filled
+    pass
 
 
 if __name__ == '__main__':
