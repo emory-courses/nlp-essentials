@@ -1,5 +1,5 @@
 # ========================================================================
-# Copyright 2025 REALITY Ministry
+# Copyright 2025 Emory University
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,3 +15,4 @@
 # ========================================================================
 
 __author__ = 'Jinho D. Choi'
+
