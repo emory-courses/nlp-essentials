@@ -1,11 +1,10 @@
 ---
 title: Homework
-description: 'HW0: Getting Started'
 ---
 
 # Homework
 
-## Task 1: Getting Started
+## Task 1: Environmental Setup
 
 In this assignment, you will:
 
@@ -46,31 +45,29 @@ Once you set up the [development environment](development-environment):
 ### Test Program
 
 1. Create the project structure:
-   1. Create a new Python package called `src` in your **nlp-essentials** directory.
-   2. Inside `src`, create a `homework` package.
+   1. Create a new Python package called [**src**](https://github.com/emory-courses/nlp-essentials/tree/main/src) in your **nlp-essentials** directory.
+   2. Inside **src**, create a [**homework**](https://github.com/emory-courses/nlp-essentials/tree/main/src/homework) package.
    3. PyCharm will automatically create **\_\_init\_\_.py** files in both directories to mark them as Python packages.
 2. Create your first program:
 
-   1. Create a Python file called **getting\_started.py** inside `homework`.
+   1. Create a Python file called [**getting\_started.py**](https://github.com/emory-courses/nlp-essentials/blob/main/src/homework/getting_started.py) inside `homework`.
    2. Copy the following code into the file:
 
-   ```python showLineNumbers
-   from elit_tokenizer import EnglishTokenizer
+      ```python showLineNumbers
+      from elit_tokenizer import EnglishTokenizer
 
-   if __name__ == '__main__':
-       text = 'Emory NLP is a research lab in Atlanta, GA. It was founded by Jinho D. Choi in 2014. Dr. Choi is a professor at Emory University.'
-       tokenizer = EnglishTokenizer()
-       sentence = tokenizer.decode(text)
-       print(sentence.tokens)
-       print(sentence.offsets)
-   ```
+      if __name__ == '__main__':
+         text = 'Emory NLP is a research lab in Atlanta, GA. It was founded by Jinho D. Choi in 2014. Dr. Choi is a professor at Emory University.'
+         tokenizer = EnglishTokenizer()
+         sentence = tokenizer.decode(text)
+         print(sentence.tokens)
+         print(sentence.offsets)
+      ```
 
 3. Run the program:
 
    1. Choose the `[Run] > [Run 'getting_started']` menu, or
    2. Use the green run button next to the main block.
-
-   ![Run the program](/img/nlp_essentials/pycharm3.png)
 
 4. Verify the output; your program is working correctly if you see this output:
 
@@ -86,10 +83,13 @@ Once you set up the [development environment](development-environment):
    1. Create the file in your **nlp-essentials** root directory
    2. Add the following lines to exclude unnecessary files:
 
-   ```bash
-   .idea/
-   .venv/
-   ```
+      ```bash
+      .idea/
+      .venv/
+      .env
+      /src/__pycache__/
+      /src/*/__pycache__/
+      ```
 
 2. Stage your files for commit:
    1. Add the following files to Git by right-clicking them and selecting `[Git] > [Add]`:

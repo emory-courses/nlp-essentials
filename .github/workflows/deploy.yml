@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'docs/**'
-      - 'src/**'
+      - 'src/css/**'
       - 'static/**'
       - 'docusaurus.config.js'
       - 'sidebars.js'

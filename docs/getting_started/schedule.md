@@ -7,12 +7,12 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 
 | Date | Topic | Assignment |
 |:---:|:---:|:---:|
-| 01/14 | [Overview](/nlp_essentials/overview) | [Homework 0](homework) |
+| 01/14 | [Getting Started](/getting_started/overview) | [Homework 0](homework) |
 | 01/19 | **Martin Luther King Day** | |
-| 01/21 | Text Processing | |
+| 01/21 | [Text Processing](/text_processing/overview) | |
 | 01/26 | (continue) | |
 | 01/28 | (continue) | |
-| 02/02 | (continue) | Homework 1 |
+| 02/02 | (continue) | [Homework 1](/text_processing/homework) |
 | 02/04 | Speed Dating | Team Formation |
 | 02/09 | Language Models | |
 | 02/11 | (continue) | |
@@ -38,6 +38,6 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 | 04/22 | **Live Demonstrations** | Final Report |
 | 04/27 | Contextual Encoding | Homework 6 |
 
-:::info
-Attendance is mandatory for all **Project Pitches** and **Live Demonstrations** sessions.
+:::tip
+💡 Attendance is mandatory for all **Project Pitches** and **Live Demonstrations** sessions.
 :::

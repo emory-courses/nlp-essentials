@@ -7,8 +7,8 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 
 ## General
 
-* GitHub: [https://github.com/emory-courses/nlp-essentials/](https://github.com/emory-courses/nlp-essentials/)
-* Book: [http://emory.gitbook.io/nlp-essentials/](http://emory.gitbook.io/nlp-essentials/)
+* GitHub: [https://github.com/emory-courses/nlp-essentials](https://github.com/emory-courses/nlp-essentials)
+* Book: [https://emory-courses.github.io/nlp-essentials](https://emory-courses.github.io/nlp-essentials)
 * Time: MW 2 - 3:45 PM
 * Location: MSC W201
 
@@ -68,7 +68,7 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 
 For the project and final reports, you are required to indicate the contribution percentage of each team member, which impacts the individual grades for the assignment.
 
-### **Contribution**
+### Contribution
 
 If your team of two members received 4 out of 5 points, for example, and you indicate that your contribution was 60% while your teammate's was 40%, the points are distributed as follows:
 
@@ -77,7 +77,7 @@ If your team of two members received 4 out of 5 points, for example, and you ind
 
 This approach ensures that the grading reflects the effort and input of each team member, promoting fairness and accountability.
 
-### **Consensus**
+### Consensus
 
 * Each team is required to submit a single, agreed-upon chart detailing the contribution percentages of all members for each team assignment. This means that you and your teammates must reach a consensus on the contribution rates before submitting your work.
 * Open communication and transparency are essential in this process. Disagreements should be resolved within the team, ensuring that the final submission reflects the true division of labor and contributions.

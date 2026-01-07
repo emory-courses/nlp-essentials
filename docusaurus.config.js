@@ -59,19 +59,25 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      // image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Emory Courses',
+        style: 'dark',
+        title: 'NLP Essentials',
         logo: {
-          alt: 'Emory Logo',
-          src: 'img/emory-logo.svg',
+          alt: 'Logo',
+          src: 'img/logo.svg',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'NLPEssentialsSidebar',
+            sidebarId: 'chaptersSidebar',
             position: 'left',
-            label: 'NLP Essentials',
+            label: 'Chapters',
+          },
+          {
+            href: 'https://github.com/emory-courses/nlp-essentials',
+            label: 'GitHub',
+            position: 'right',
           },
           {
             href: 'https://www.emorynlp.org/faculty/jinho-choi',

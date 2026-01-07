@@ -26,6 +26,61 @@
   --ifm-h3-font-size: 1.5rem;
 }
 
+/* Navbar link colors - make them brighter in dark navbar */
+.navbar--dark .navbar__link {
+  color: #ffffff;
+}
+
+.navbar--dark .navbar__link:hover,
+.navbar--dark .navbar__link--active {
+  color: #4fddbf;
+}
+
+.navbar--dark .navbar__title {
+  color: #ffffff;
+}
+
+/* Footer styling to match navbar */
+.footer {
+  background-color: #242526;
+  padding: 1rem 0;
+}
+
+.footer__copyright {
+  color: #F6F8FA;
+}
+
+/* Admonition (info/warning boxes) customization */
+/* Remove left border */
+.theme-admonition {
+  border-left: none !important;
+  position: relative;
+}
+
+/* Hide the entire heading (icon + title text) */
+.theme-admonition > div:first-child {
+  display: none;
+}
+
+/* Add custom icons with CSS */
+.theme-admonition::before {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* info, note, tip, caution, warning, and danger */
+.admonition-icon svg {
+  display: none;
+}
+
+/* Custom class for wrapping text in specific code blocks */
+.wrap-text pre code {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+}
+
 /* Dark mode overrides */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;

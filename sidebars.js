@@ -13,19 +13,30 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  NLPEssentialsSidebar: [
+  chaptersSidebar: [
     {
       type: 'category',
-      label: 'NLP Essentials',
+      label: 'Getting Started',
       items: [
-        'nlp_essentials/overview',
-        'nlp_essentials/syllabus',
-        'nlp_essentials/schedule',
-        'nlp_essentials/development-environment',
-        'nlp_essentials/homework',
+        'getting_started/overview',
+        'getting_started/syllabus',
+        'getting_started/schedule',
+        'getting_started/development-environment',
+        'getting_started/homework',
       ],
     },
-    
+    {
+      type: 'category',
+      label: 'Text Processing',
+      items: [
+        'text_processing/overview',
+        'text_processing/frequency-analysis',
+        'text_processing/tokenization',
+        'text_processing/lemmatization',
+        'text_processing/regular-expressions',
+        'text_processing/homework',
+      ],
+    },
   ],
 };
 

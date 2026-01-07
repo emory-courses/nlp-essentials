@@ -17,7 +17,7 @@ This guide will help you set up your **development environment** by installing r
 2. Login to GitHub.
 3. Create a new repository named "**nlp-essentials**" and set its visibility to **Private**.
 
-   <img src={require('/img/nlp_essentials/create-repo.png').default} width={550} />
+   <img src={require('/img/getting_started/create-repo.png').default} width={550} />
 
 4. Go to `[Settings]` in your repository, and select `[Collaborators]`.
 5. Click `[Add people]`, and add each instructor using their GitHub usernames:
@@ -25,7 +25,7 @@ This guide will help you set up your **development environment** by installing r
    2. Enter each username and send the collaboration invitation.
 6. Verify that all instructors have been added as collaborators.
 
-   <img src={require('/img/nlp_essentials/collaborators.png').default} width={850} />
+   <img src={require('/img/getting_started/collaborators.png').default} width={850} />
 
 
 ## PyCharm
@@ -38,7 +38,7 @@ This guide will help you set up your **development environment** by installing r
    2. Press `[+]`, select `[Log in via GitHub]`, and follow the browser prompts to authorize PyCharm with your GitHub account.
    3. Once connected, you will be able to access GitHub directly from PyCharm for version control operations.
 
-   <img src={require('/img/nlp_essentials/pycharm1.png').default} width={850} />
+      <img src={require('/img/getting_started/pycharm1.png').default} width={850} />
 
 3. Create a new PyCharm project from GitHub:
    1. On the initial screen, click `[Clone Repository]`.
@@ -48,7 +48,7 @@ This guide will help you set up your **development environment** by installing r
    2. Click `[Add Interpreter]` and choose `[Add Local Interpreter]`.
 5. In the prompted menu, choose `[Add Local Environment]`, configure as follows, then click `[OK]`:
 
-   <img src={require('/img/nlp_essentials/pycharm2.png').default} width={450} />
+   <img src={require('/img/getting_started/pycharm2.png').default} width={450} />
 
    * Environment:  **Generate new**
    * Type: `Virtualenv
@@ -57,5 +57,5 @@ This guide will help you set up your **development environment** by installing r
 
 ## References
 
-* [Git](https://docs.github.com/en/get-started/using-git/about-git): a version control system for tracking changes in files.
-* [Virtualenv](https://virtualenv.pypa.io): a tool to create isolated Python environment.
+1. [Git](https://docs.github.com/en/get-started/using-git/about-git): a version control system for tracking changes in files.
+1. [Virtualenv](https://virtualenv.pypa.io): a tool to create isolated Python environment.
