@@ -58,8 +58,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
-      // image: 'img/docusaurus-social-card.jpg',
+      image: 'img/social-card.jpg',
       navbar: {
         style: 'dark',
         title: 'NLP Essentials',
@@ -73,6 +72,12 @@ const config = {
             sidebarId: 'chaptersSidebar',
             position: 'left',
             label: 'Chapters',
+          },
+          {
+            type: 'docSidebar',
+            sidebarId: 'projectsSidebar',
+            position: 'left',
+            label: 'Projects',
           },
           {
             href: 'https://github.com/emory-courses/nlp-essentials',
@@ -116,7 +121,7 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} All rights reserved.`,
+        copyright: `Copyright © ${new Date().getFullYear()} - All rights reserved.`,
       },
       prism: {
         theme: prismThemes.github,
