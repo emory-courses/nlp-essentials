@@ -16,3 +16,32 @@
 
 __author__ = 'Jinho D. Choi'
 
+import os
+
+from dotenv import load_dotenv
+from openai import OpenAI
+from openai.types.chat import ChatCompletion
+
+# Load environment variables from .env file
+load_dotenv()
+
+
+def test_llm_api() -> ChatCompletion:
+    # Initialize the OpenAI client
+    client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
+
+    # Create a simple chat completion
+    response = client.chat.completions.create(
+        model="gpt-5-nano",  # Using the fastest, cheapest model
+        messages=[
+            {"role": "user", "content": "Say 'Hello World'."}
+        ]
+    )
+
+    return response
+
+
+if __name__ == "__main__":
+    r = test_llm_api()
+    print(r.choices[0].message.content)
+    print(r)
