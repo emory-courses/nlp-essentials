@@ -52,6 +52,19 @@ const sidebars = {
         'projects/activities/final-report',
       ],
     },
+    {
+      type: 'category',
+      label: 'Team Projects',
+      items: [
+        'projects/team_projects/current-projects',
+        'projects/team_projects/projects-2025',
+        'projects/team_projects/projects-2024',
+        'projects/team_projects/projects-2023',
+        'projects/team_projects/projects-2022',
+        'projects/team_projects/projects-2021',
+        'projects/team_projects/projects-2020',
+      ],
+    },
   ],
 };
 
