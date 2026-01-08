@@ -1,5 +1,6 @@
 ---
 title: Homework
+description: 'HW0: Getting Started'
 ---
 
 # Homework

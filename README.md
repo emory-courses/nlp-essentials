@@ -1,7 +1,6 @@
 # NLP Essentials
 
-Course materials for http://emory.gitbook.io/nlp-essentials
+![image](static/img/social-card.jpg)
 
-## Author
-
-* [Jinho D. Choi](https://www.emorynlp.org/faculty/jinho-choi)
+* Course: https://emory-courses.github.io/nlp-essentials
+* Author: [Jinho D. Choi](https://www.emorynlp.org/faculty/jinho-choi)

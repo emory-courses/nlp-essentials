@@ -8,11 +8,11 @@ This chapter introduces you to the course structure, learning objectives, and de
 
 ## Contents
 
-* [Syllabus](syllabus.md)
-* [Schedule](schedule.md)
-* [Development Environment](development-environment.md)
-* [Homework](homework.md)
+* [Syllabus](syllabus)
+* [Schedule](schedule)
+* [Development Environment](development-environment)
+* [Homework](homework)
 
 :::tip
-💡 If you are new to programming environments, don't worry! The [Development Environment](development-environment.md) guide provides step-by-step instructions with screenshots to help you through the setup process.
+💡 If you are new to programming environments, don't worry! The [Development Environment](development-environment) guide provides step-by-step instructions with screenshots to help you through the setup process.
 :::

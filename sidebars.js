@@ -37,6 +37,51 @@ const sidebars = {
         'chapters/text_processing/homework',
       ],
     },
+    {
+      type: 'category',
+      label: 'Language Models',
+      items: [
+        'chapters/language_models/overview',
+        'chapters/language_models/n-gram-models',
+        'chapters/language_models/smoothing',
+        'chapters/language_models/maximum-likelihood-estimation',
+        'chapters/language_models/entropy-and-perplexity',
+        'chapters/language_models/homework',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Large Language Models',
+      items: [
+        'chapters/large_language_models/overview',
+        'chapters/large_language_models/homework',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Vector Space Models',
+      items: [
+        'chapters/vector_space_models/overview',
+        'chapters/vector_space_models/bag-of-words-model',
+        'chapters/vector_space_models/term-weighting',
+        'chapters/vector_space_models/document-similarity',
+        'chapters/vector_space_models/document-classification',
+        'chapters/vector_space_models/homework',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Distributional Semantics',
+      items: [
+        'chapters/distributional_semantics/overview',
+        'chapters/distributional_semantics/distributional-hypothesis',
+        'chapters/distributional_semantics/word-representations',
+        'chapters/distributional_semantics/latent-semantic-analysis',
+        'chapters/distributional_semantics/neural-networks',
+        'chapters/distributional_semantics/neural-language-models',
+        'chapters/distributional_semantics/homework',
+      ],
+    },
   ],
   projectsSidebar: [
     {
