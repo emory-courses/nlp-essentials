@@ -11,7 +11,7 @@ import rehypeKatex from 'rehype-katex';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'NLP Essentials',
-  tagline: 'Textbook for the "NLP Essentials" course',
+  tagline: 'Foundations of Modern NLP',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
