@@ -8,17 +8,17 @@ title: Neural Language Models
 
 ## Word2Vec
 
-**Word2Vec** is a neural language model that maps words into a high-dimensional embedding space, positioning similar words closer to each other.&#x20;
+**Word2Vec** is a neural language model that maps words into a high-dimensional embedding space, positioning similar words closer to each other.
 
 ### Continuous Bag-of-Words
 
-Consider a sequence of words, $$\lbrace w_{k-2}, w_{k-1}, w_{k}, w_{k+1}, w_{k+2} \rbrace$$. We can predict $$w_i$$ by leveraging its contextual words using a [generative model](https://en.wikipedia.org/wiki/Generative_model) similar to the [n-gram models](../language-models/n-gram-models.md) discussed previously ($$V$$: a vocabulary list comprising all unique words in the corpus):
+Consider a sequence of words, $$\lbrace w_{k-2}, w_{k-1}, w_{k}, w_{k+1}, w_{k+2} \rbrace$$. We can predict $$w_i$$ by leveraging its contextual words using a [generative model](https://en.wikipedia.org/wiki/Generative_model) similar to the [n-gram models](/chapters/language_models/n-gram-models) discussed previously ($$V$$: a vocabulary list comprising all unique words in the corpus):
 
 $$
 w_k = \arg\max_{\forall. w_* \in V}P(w_*|w_{k-2},w_{k-1},w_{k+1},w_{k+2})
 $$
 
-This objective can also be achieved by using a [discriminative model](https://en.wikipedia.org/wiki/Discriminative_model) such as **Continuous Bag-of-Words** (CBOW) using a [multilayer perceptron](neural-networks.md#multilayer-perceptron). Let $$\mathrm{x} \in \mathbb{R}^{1 \times n}$$ be an input vector, where $$n = \lvert V \rvert$$. $$\mathrm{x}$$ is created by the [bag-of-words](../vector-space-models/bag-of-words-model.md) model on a set of context words, $$I = \lbrace w_{k-2},w_{k-1},w_{k+1},w_{k+2} \rbrace$$, such that only the dimensions of $$\mathrm{x}$$ representing words in $$I$$ have a value of $$1$$; otherwise, they are set to $$0$$.
+This objective can also be achieved by using a [discriminative model](https://en.wikipedia.org/wiki/Discriminative_model) such as **Continuous Bag-of-Words** (CBOW) using a [multilayer perceptron](neural-networks.md#multilayer-perceptron). Let $$\mathrm{x} \in \mathbb{R}^{1 \times n}$$ be an input vector, where $$n = \lvert V \rvert$$. $$\mathrm{x}$$ is created by the [bag-of-words](/chapters/vector_space_models/bag-of-words-model) model on a set of context words, $$I = \lbrace w_{k-2},w_{k-1},w_{k+1},w_{k+2} \rbrace$$, such that only the dimensions of $$\mathrm{x}$$ representing words in $$I$$ have a value of $$1$$; otherwise, they are set to $$0$$.
 
 Let $$\mathrm{y} \in \mathbb{R}^{1 \times n}$$ be an output vector, where all dimensions have the value of $$0$$ except for the one representing $$w_k$$, which is set to $$1$$.
 
@@ -61,7 +61,7 @@ Let $$\mathrm{x} \in \mathbb{R}^{1 \times n}$$ be an input vector, where only th
 
 ### Distributional Embeddings
 
-What does each dimension in the hidden layer $$\mathrm{h}$$ represent for CBOW? It represents a feature obtained by aggregating specific aspects from each context word in $$I$$, deemed valuable for predicting the target word $$w_i​$$. Formally, each dimension $$\mathrm{h}_j$$ is computed as the sigmoid activation of the weighted sum between the input vector $$\mathrm{x}$$ and the column vector  such that:
+What does each dimension in the hidden layer $$\mathrm{h}$$ represent for CBOW? It represents a feature obtained by aggregating specific aspects from each context word in $$I$$, deemed valuable for predicting the target word $$w_i$$. Formally, each dimension $$\mathrm{h}_j$$ is computed as the sigmoid activation of the weighted sum between the input vector $$\mathrm{x}$$ and the column vector such that:
 
 $$
 \mathrm{h}_j = \mathrm{sigmoid}(\mathrm{x} \cdot \mathrm{cx}_j)

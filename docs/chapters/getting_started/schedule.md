@@ -19,23 +19,23 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 | 02/16 | (continue) | |
 | 02/18 | (continue) | [Homework 2](/chapters/language_models/homework) |
 | 02/23 | [Large Language Models](/chapters/large_language_models/overview) | [Project Pitch](/projects/activities/project-pitch) |
-| 02/25 | (continue) | |
+| 02/25 | (continue) | [Proposal Report](/projects/activities/proposal-report) |
 | 03/02 | (continue) | |
 | 03/04 | (continue) | [Homework 3](/chapters/large_language_models/homework) |
 | 03/09 | Spring Break | |
 | 03/11 | Spring Break | |
 | 03/16 | [**Project Pitches**](/projects/team_projects/current-projects) | |
-| 03/18 | [**Project Pitches**](/projects/team_projects/current-projects) | [Proposal Report](/projects/activities/proposal-report) |
+| 03/18 | [**Project Pitches**](/projects/team_projects/current-projects) | |
 | 03/23 | [Vector Space Models](/chapters/vector_space_models/overview) | |
 | 03/25 | (continue) | |
 | 03/30 | (continue) | |
 | 04/01 | (continue) | [Homework 4](/chapters/vector_space_models/homework) |
 | 04/06 | [Distributional Semantics](/chapters/distributional_semantics/overview) | [Live Demonstration](/projects/activities/live-demonstration) |
-| 04/08 | (continue) | |
+| 04/08 | (continue) | [Final Report](/projects/activities/final-report) |
 | 04/13 | (continue) | |
 | 04/15 | (continue) | [Homework 5](/chapters/distributional_semantics/homework) |
 | 04/20 | [**Live Demonstrations**](/projects/team_projects/current-projects) | |
-| 04/22 | [**Live Demonstrations**](/projects/team_projects/current-projects) | [Final Report](/projects/activities/final-report) |
+| 04/22 | [**Live Demonstrations**](/projects/team_projects/current-projects) | |
 | 04/27 | Modern NLP |  |
 
 :::tip

@@ -30,7 +30,8 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 ## Grading
 
 * Homework: 65%
-* Team Project: 35%
+* Project Proposal: 15%
+* Final Project: 20%
 * Your work is governed by the [Emory Honor Code](http://catalog.college.emory.edu/policies/honor-code.html). Honor code violations (e.g., copies from any source, including colleagues and internet sites) will be referred to the Emory Honor Council.
 * Requests for absence/rescheduling due to severe personal events (such as health, family, or personal reasons) impacting course performance must be supported by a letter from the [Office for Undergraduate Education](https://oue.college.emory.edu).
 

@@ -6,7 +6,7 @@ title: Neural Networks
 
 ## Logistic Regression
 
-Let $$\mathrm{x} = [x_1, \ldots, x_n]$$ be a vector representing an input instance, where $$x_i$$ denotes the $$i$$'th feature of the input and $$y \in \lbrace 0, 1 \rbrace$$ be its corresponding output label. **Logistic regression** uses the **logistic function**, aka. the **sigmoid function**, to estimate the probability that $$\mathrm{x}$$ belongs to $$y$$:&#x20;
+Let $$\mathrm{x} = [x_1, \ldots, x_n]$$ be a vector representing an input instance, where $$x_i$$ denotes the $$i$$'th feature of the input and $$y \in \lbrace 0, 1 \rbrace$$ be its corresponding output label. **Logistic regression** uses the **logistic function**, aka. the **sigmoid function**, to estimate the probability that $$\mathrm{x}$$ belongs to $$y$$:
 
 $$
 \begin{align*}
@@ -27,7 +27,7 @@ Consider a corpus consisting of two sentences:
 >
 > D2: I hate this movie
 
-The input vectors $$\mathrm{x}_1$$ and $$\mathrm{x}_2$$ can be created for these two sentences using the [bag-of-words model](../vector-space-models/bag-of-words-model.md):
+The input vectors $$\mathrm{x}_1$$ and $$\mathrm{x}_2$$ can be created for these two sentences using the [bag-of-words model](/chapters/vector_space_models/bag-of-words-model):
 
 ```python
 V = {0: "I", 1: "love", 2: "hate", 3: "this", 4: "movie"}
@@ -42,7 +42,7 @@ w = [0.0, 1.5, -1.5, 0.0, 0.0]
 b = 0
 ```
 
-Since the terms "_I_", "_this_", and "_movie_" appear with equal frequency across both labels, their weights $$w_1​$$, $$w_4​$$, and $$w_5​$$ are neutralized. On the other hand, the terms "_love_" and "_hate_" appear only with the positive and negative labels, respectively. Therefore, while the weight $$w_1​$$ for "_love_" ($$x_1​$$) contributes positively to the label $$y=1$$, the weight $$w_2$$ for "_hate_" ($$x_2​$$) has a negative impact on the label $$y=1$$. Furthermore, as positive and negative sentiment labels are equally presented in this corpus, the bias $$b$$ is also set to 0.
+Since the terms "_I_", "_this_", and "_movie_" appear with equal frequency across both labels, their weights $$w_1$$, $$w_4$$, and $$w_5$$ are neutralized. On the other hand, the terms "_love_" and "_hate_" appear only with the positive and negative labels, respectively. Therefore, while the weight $$w_1$$ for "_love_" ($$x_1$$) contributes positively to the label $$y=1$$, the weight $$w_2$$ for "_hate_" ($$x_2$$) has a negative impact on the label $$y=1$$. Furthermore, as positive and negative sentiment labels are equally presented in this corpus, the bias $$b$$ is also set to 0.
 
 Given the weight vector and the bias, we have $$\mathrm{x}_1 \cdot \mathrm{w}^T + b = 1.5$$ and $$\mathrm{x}_2 \cdot \mathrm{w}^T + b = -1.5$$, resulting the following probabilities:
 
@@ -53,7 +53,7 @@ P(y=1|\mathrm{x}_2) \approx 0.18
 \end{align*}
 $$
 
-As the probability of $$x_1​$$ being $$y=1$$ exceeds $$0.5$$ (50%), the model predicts the first sentence to convey a positive sentiment. Conversely, the model predicts the second sentence to convey a negative sentiment as its probability of being $$y=1$$ is below 50%.
+As the probability of $$x_1$$ being $$y=1$$ exceeds $$0.5$$ (50%), the model predicts the first sentence to convey a positive sentiment. Conversely, the model predicts the second sentence to convey a negative sentiment as its probability of being $$y=1$$ is below 50%.
 
 :::warning
 **Q8**: Under what circumstances would the **bias** $$b$$ be negative in the above example? Additionally, when might neutral terms such as "_this_" or "_movie_" exhibit non-neutral weights?
@@ -61,13 +61,13 @@ As the probability of $$x_1​$$ being $$y=1$$ exceeds $$0.5$$ (50%), the model 
 
 ## Softmax Regression
 
-**Softmax regression**, aka. multinomial logistic regression, is an extension of logistic regression to handle classification problems with more than two classes. Given an input vector $$\mathrm{x} \in \mathbb{R}^{1 \times n}$$ and its output lable $$y \in \lbrace 0, \ldots, m-1 \rbrace$$, the model uses the **softmax function** to estimates the probability that $$\mathrm{x}$$ belongs to each class separately:&#x20;
+**Softmax regression**, aka. multinomial logistic regression, is an extension of logistic regression to handle classification problems with more than two classes. Given an input vector $$\mathrm{x} \in \mathbb{R}^{1 \times n}$$ and its output lable $$y \in \lbrace 0, \ldots, m-1 \rbrace$$, the model uses the **softmax function** to estimates the probability that $$\mathrm{x}$$ belongs to each class separately:
 
 $$
 P(y=k|\mathrm{x}) = \frac{e^{\mathrm{x}\cdot\mathrm{w}_k^T+b_k}}{\sum_{j=1}^m e^{\mathrm{x}\cdot\mathrm{w}_j^T+b_j}}
 $$
 
-The weight vector $$\mathrm{w}_k​$$ assigns weights to $$\mathrm{x}$$ for the label $$y=k$$, while $$b_k​$$ represents the bias associated with the label $$y=k$$.
+The weight vector $$\mathrm{w}_k$$ assigns weights to $$\mathrm{x}$$ for the label $$y=k$$, while $$b_k$$ represents the bias associated with the label $$y=k$$.
 
 :::warning
 **Q9**: What is the role of the **softmax function** in the softmax regression model? How does it differ from the sigmoid function?
@@ -81,7 +81,7 @@ Consider a corpus consisting of three sentences:
 >
 > D3: I watched this movie
 
-Then, the input vectors $$\mathrm{x}_1$$, $$\mathrm{x}_2$$, and $$\mathrm{x}_3$$ for the sentences can be created using the [bag-of-words model](../vector-space-models/bag-of-words-model.md):
+Then, the input vectors $$\mathrm{x}_1$$, $$\mathrm{x}_2$$, and $$\mathrm{x}_3$$ for the sentences can be created using the [bag-of-words model](/chapters/vector_space_models/bag-of-words-model):
 
 ```python
 V = {0: "I", 1: "love", 2: "hate", 3: "this", 4: "movie", 5: "watched"}
@@ -168,7 +168,7 @@ Consider a corpus comprising the following five sentences the corresponding labe
 >
 > D5: I truly hate this movie $$\Rightarrow$$ very negative
 
-The input vectors $$\mathrm{x}_{1..5}$$ can be created using the [bag-of-words model](../vector-space-models/bag-of-words-model.md):
+The input vectors $$\mathrm{x}_{1..5}$$ can be created using the [bag-of-words model](/chapters/vector_space_models/bag-of-words-model):
 
 ```python
 X = {0: "I", 1: "love", 2: "hate", 3: "this", 4: "movie", 5: "watched", 6: "truly"}

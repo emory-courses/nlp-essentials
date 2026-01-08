@@ -8,12 +8,12 @@ This section outlines the team project activities that span the second half of t
 
 ## Contents
 
-* [Speed Dating](speed-dating.md)
-* [Team Formation](team-formation.md)
-* [Project Pitch](project-pitch.md)
-* [Proposal Report](proposal.md)
-* [Live Demonstration](live-demonstration.md)
-* [Final Report](final-report.md)
+* [Speed Dating](speed-dating)
+* [Team Formation](team-formation)
+* [Project Pitch](project-pitch)
+* [Proposal Report](proposal-report)
+* [Live Demonstration](live-demonstration)
+* [Final Report](final-report)
 
 :::tip
 💡 Team projects are collaborative efforts that require planning, communication, and consistent progress. Start early, communicate regularly with your teammates, and don't hesitate to reach out to the instructor if you encounter challenges.

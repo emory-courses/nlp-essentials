@@ -115,10 +115,6 @@ Once you set up the [development environment](development-environment):
    1. Visit your GitHub repository in a web browser.
    2. Confirm that all files are properly present and contain the correct content.
 
-### Submission
-
-Submit the URL of your GitHub repository to Canvas.
-
 ## Task 2: Project Ideas
 
 Share your team project concept by filling out the form in Canvas (about 100-150 words). Your description will be posted on the Project Ideas page to help classmates discover shared interests and form teams.

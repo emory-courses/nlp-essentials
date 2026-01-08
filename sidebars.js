@@ -110,6 +110,15 @@ const sidebars = {
         'projects/team_projects/projects-2020',
       ],
     },
+    {
+      type: 'category',
+      label: 'Project Ideas',
+      items: [
+        'projects/project_ideas/current-ideas',
+        'projects/project_ideas/ideas-2025',
+        'projects/project_ideas/ideas-2024',
+      ],
+    },
   ],
 };
 

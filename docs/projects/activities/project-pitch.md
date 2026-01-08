@@ -4,7 +4,7 @@ title: Project Pitch
 
 # Project Pitch
 
-Each team will deliver an 8-minute presentation pitching their [project proposal](proposal) to the class. This presentation should effectively communicate your project's vision, methodology, and potential impact while demonstrating its feasibility within the semester timeframe.
+Each team will deliver an 8-minute presentation pitching their [project proposal](proposal-report) to the class. This presentation should effectively communicate your project's vision, methodology, and potential impact while demonstrating its feasibility within the semester timeframe.
 
 ## Requirements
 
