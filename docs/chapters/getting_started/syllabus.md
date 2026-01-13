@@ -9,23 +9,24 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 
 * GitHub: [https://github.com/emory-courses/nlp-essentials](https://github.com/emory-courses/nlp-essentials)
 * Book: [https://emory-courses.github.io/nlp-essentials](https://emory-courses.github.io/nlp-essentials)
-* Time: MW 2 - 3:45 PM
+* Time: MW 2:30 - 3:45 PM
 * Location: MSC W201
 
 ## Instructors
 
-* [Jinho Choi](mailto:jinho.choi@emory.edu)
+* [Jinho Choi](mailto:)
   * Associate Professor of Computer Science, Data and Decision Sciences, Linguistics
   * Office Hours and Location: MW 4:00 - 5:00 PM, Emerson Hall 500
   * GitHub: jdchoi77
-* TBD
+* [Noah Sturgill](mailto:noah.sturgill@emory.edu)
   * Ph.D. Student in Computer Science and Informatics
-  * Office Hours and Location: TBD
-  * GitHub: TBD
-* TBD
+  * Office Hours and Location: MW 1:00 - 2:30 PM, Computer Lab on the 3rd floor of MSC
+  * GitHub: nsturgill78
+* [Winston Zeng](mailito:winston.zeng@emory.edu)
   * Ph.D. Student in Computer Science and Informatics
-  * Office Hours and Location: TBD
-  * GitHub: TBD
+  * Office Hours and Location: TuTh 1:00 - 2:30 PM, Computer Lab on the 3rd floor of MSC
+  * GitHub: wczeng01
+
 
 ## Grading
 
