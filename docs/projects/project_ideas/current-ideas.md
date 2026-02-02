@@ -198,7 +198,7 @@ Perhaps comparing language and grammar features between modern and historical En
 
 ---
 
-### 27. Hsin-Yu Chen {#student-27}
+### 27. Emily (Hsin-Yu) Chen {#student-27}
 
 I would like to analyze emotional tone and sentiment across music genres using NLP applied to the song lyrics. It will collect lyrics from multiple genres such as pop, hip-hop, and R&B, and use tokenization, sentiment analysis, and lexical emotion dictionaries to classify words as positive, negative, or emotion-specific (e.g., happiness, sadness, anger, or confidence). The goal is to examine whether certain genres consistently express distinct emotional profiles, such as hip-hop may show stronger expressions of anger or confidence, while R&B may emphasize themes of heartbreak or vulnerability. By comparing sentiment patterns across genres, I would like to explore how musical genres are reflected through emotional language, and whether genre labels align with the emotional content of lyrics.
 
@@ -474,7 +474,7 @@ Students are organized by thematic interests to help identify potential teammate
 **Students in this group:**
 
 - [18. Charles Cook](#student-18)
-- [27. Hsin-Yu Chen](#student-27)
+- [27. Emily (Hsin-Yu) Chen](#student-27)
 - [31. Carl Yu](#student-31)
 - [44. Brady Westergren](#student-44)
 - [50. Zhang Jinghao](#student-50)
