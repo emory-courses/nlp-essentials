@@ -51,14 +51,6 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Large Language Models',
-      items: [
-        'chapters/large_language_models/overview',
-        'chapters/large_language_models/homework',
-      ],
-    },
-    {
-      type: 'category',
       label: 'Vector Space Models',
       items: [
         'chapters/vector_space_models/overview',
@@ -80,6 +72,14 @@ const sidebars = {
         'chapters/distributional_semantics/neural-networks',
         'chapters/distributional_semantics/neural-language-models',
         'chapters/distributional_semantics/homework',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Large Language Models',
+      items: [
+        'chapters/large_language_models/overview',
+        'chapters/large_language_models/homework',
       ],
     },
   ],
