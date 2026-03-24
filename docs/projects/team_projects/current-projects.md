@@ -27,7 +27,7 @@ slug: current-projects
 
 #### [T5] Linguistics in NLP: Evaluating LLM Performance on Core Linguistics Tasks Across Languages
 
-* Members: Claire, Coralynn, Ramlah, Srijon
+* Members: Ramlah Amer, Claire Burkhardt, Srijon Sarkar, Coralynn Yang
 * Proposal: [slides](https://drive.google.com/file/d/1cCv2jKKwfs2sikRnloaBGlZ5r_T-GiWk/view?usp=sharing), report
 
 #### [T6] Health Myth Debunker: Evaluating Health Claims Using Scientific Evidence
@@ -37,7 +37,7 @@ slug: current-projects
 
 #### [T7] Financial Report Analyzer
 
-* Members: Pranav Balaji, Oliver Kumar, Nick Melamed, Riyaa Randhawa, Chloe Zhao
+* Members: Pranav Balaji, Oliver Kumar, Nickolas Melamed, Riyaa Randhawa, Chloe Zhao
 * Proposal: [slides](https://drive.google.com/file/d/1pJTifomKkwqg6v_OLF3r6smNb-CKnSEc/view?usp=sharing), report
 
 #### [T8] JobSpy
@@ -47,7 +47,7 @@ slug: current-projects
 
 #### [T9] AuthentiGuard: A Real-Time Multimodal AI-Generated Content Detection & Filtering System for Social Media
 
-* Members: Emily, Jay, Jonathan, Shaun
+* Members: Shaun Baek, Emily Chen, Jay Lee, Jonathan Velazquez
 * Proposal: [slides](https://drive.google.com/file/d/1kE2OM175dnTMyP_N6fXznxB4WBLWKyft/view?usp=sharing), report
 
 #### [T10] EpsTracked: Tracking Human Trafficking in the Epstein Files Archive
@@ -62,7 +62,7 @@ slug: current-projects
 
 #### [T12] Gradeon: Smart Grading Agent
 
-* Members: James Broderick, Mandy Sun, Carl Yu, Yuigo Ueyama
+* Members: James Broderick, Mandy Sun, Yuigo Ueyama, Carl Yu
 * Proposal: [slides](https://drive.google.com/file/d/13tBryhhrewmR3Inrq4Sli17lfoUMBh8K/view?usp=sharing), report
 
 #### [T13] PaperVerse: Autonomous Knowledge Graph Construction via Collaborative Multi-Agent System
