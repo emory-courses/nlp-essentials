@@ -30,10 +30,10 @@ description: 'CS|DATASCI|LING-329: Computational Linguistics (Spring 2026)'
 | 03/25 | (continue) | |
 | 03/30 | (continue) | |
 | 04/01 | (continue) | [Homework 4](/chapters/distributional_semantics/homework) |
-| 04/06 | [Large Language Models](/chapters/large_language_models/overview) | [Live Demonstration](/projects/activities/live-demonstration) |
+| 04/06 | [Contextual Encoding](/chapters/contextual_encoding/overview) | [Live Demonstration](/projects/activities/live-demonstration) |
 | 04/08 | (continue) | [Final Report](/projects/activities/final-report) |
 | 04/13 | (continue) | |
-| 04/15 | (continue) | [Homework 5](/chapters/large_language_models/homework) |
+| 04/15 | (continue) | [Homework 5](/chapters/contextual_encoding/homework) |
 | 04/20 | [**Live Demonstrations**](/projects/team_projects/current-projects) | |
 | 04/22 | [**Live Demonstrations**](/projects/team_projects/current-projects) | |
 | 04/27 | Modern NLP |  |

@@ -21,9 +21,9 @@ Learning assessment combines concept quizzes to reinforce theoretical understand
 1. [Getting Started](chapters/getting_started/overview)
 1. [Text Processing](chapters/text_processing/overview)
 1. [Language Models](chapters/language_models/overview)
-1. [Large Language Models](chapters/large_language_models/overview)
 1. [Vector Space Models](chapters/vector_space_models/overview)
 1. [Distributional Semantics](chapters/distributional_semantics/overview)
+1. [Contextual Encoding](chapters/contextual_encoding/overview)
 
 ## Projects
 

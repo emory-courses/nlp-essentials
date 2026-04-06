@@ -76,12 +76,24 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Large Language Models',
+      label: 'Contextual Encoding',
       items: [
-        'chapters/large_language_models/overview',
-        'chapters/large_language_models/homework',
+        'chapters/contextual_encoding/overview',
+        'chapters/contextual_encoding/subword-tokenization',
+        'chapters/contextual_encoding/recurrent-neural-networks',
+        'chapters/contextual_encoding/transformer',
+        'chapters/contextual_encoding/encoder-decoder-framework',
+        'chapters/contextual_encoding/homework',
       ],
-    },
+    }
+    // {
+    //   type: 'category',
+    //   label: 'Large Language Models',
+    //   items: [
+    //     'chapters/large_language_models/overview',
+    //     'chapters/large_language_models/homework',
+    //   ],
+    // }
   ],
   projectsSidebar: [
     {

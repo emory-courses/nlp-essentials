@@ -81,6 +81,16 @@
   word-break: break-word;
 }
 
+/* Figure captions */
+figure {
+  text-align: center;
+}
+
+figcaption {
+  color: dimgray;
+  font-size: 0.85rem;
+}
+
 /* Dark mode overrides */
 [data-theme='dark'] {
   --ifm-color-primary: #25c2a0;
