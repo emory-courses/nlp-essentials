@@ -25,7 +25,7 @@ Figure 2 shows an encoder example that takes the input sequence, "_I am a boy_",
 </figure>
 
 :::warning
-Is it possible to derive the context vector from $$x_n$$ instead of $$x_c$$? What is the purpose of appending an extra token to indicate the end of the sequence?
+**Q15**: Is it possible to derive the **context vector** from $$x_n$$ instead of $$x_c$$? What is the purpose of appending an extra token to indicate the end of the sequence?
 :::
 
 ## Decoder
@@ -51,7 +51,7 @@ Figure 3 illustrates a decoder example that takes the context vector $$y_0$$ and
 </figure>
 
 :::warning
-The decoder mentioned above does not guarantee the generation of the end-of-sequence token at any step. What potential issues can arise from this?
+**Q16**: The decoder mentioned above does not guarantee the generation of the **end-of-sequence token** at any step. What potential issues can arise from this?
 :::
 
 The likelihood of the current output $$y_i$$ can be calculated as:
@@ -65,10 +65,6 @@ where $$q$$ is a function that takes the context vector $$y_c$$, previous input 
 $$
 P(Y) = \prod_{i=1}^{m+1} q(y_c, y_{i-1}, s_{i-1})
 $$
-
-:::warning
-The maximum likelihood estimation of the output sequence above accounts for the _end-of-sequence_ token $$y_t$$. What are the benefits of incorporating this artificial token when estimating the sequence probability?
-:::
 
 ## References
 
