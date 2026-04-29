@@ -81,7 +81,7 @@ slug: current-projects
 
 * Members: Mingyang Li<sup>[1]</sup>, Mohamed Ali<sup>[2]</sup>
 * Proposal: [slides](https://drive.google.com/file/d/1SbnDYriFsZqLrdwkbINUWQF3JJ8lGC7V/view?usp=sharing), [report](https://drive.google.com/file/d/10RUxfJkvQFZ9DYXAi1wf3FqlusSBSBwE/view?usp=sharing), [comments](https://drive.google.com/file/d/1RCVXngRjYtKdPZaDC2bhvov2OAZ-AoLD/view?usp=drive_link)
-* Final: [video<sup>[1]</sup>](https://drive.google.com/file/d/1ta1xgngJe7jREnaFZlFtPRP811xn08A_/view?usp=sharing), [video<sup>[2]</sup>](https://drive.google.com/file/d/1tqkqLYB9mCA37v_3irNbKDKdHo9hhGAF/view?usp=sharing), report<sup>[1]</sup>, report<sup>[2]</sup>, [comments](https://drive.google.com/file/d/1AgRJtl7aDGOIX7ABV8_9lLgUW3iPudai/view?usp=sharing)
+* Final: [video<sup>[1]</sup>](https://drive.google.com/file/d/1ta1xgngJe7jREnaFZlFtPRP811xn08A_/view?usp=sharing), [video<sup>[2]</sup>](https://drive.google.com/file/d/1tqkqLYB9mCA37v_3irNbKDKdHo9hhGAF/view?usp=sharing), report<sup>[1]</sup>, report<sup>[2]</sup>, [comments<sup>[1]</sup>](https://drive.google.com/file/d/1wDlsVRNbqUcXqquM9fEPTbyTifHpTLV1/view?usp=sharing), [comments<sup>[2]</sup>](https://drive.google.com/file/d/1POfbJ_JGc2QYjXGAZu3RbCKaZCgW_NPk/view?usp=sharing)
 
 #### [T14] Context-Aware Arabic-English Translation
 
